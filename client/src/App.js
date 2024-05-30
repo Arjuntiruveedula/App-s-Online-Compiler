@@ -34,7 +34,7 @@ function App() {
       setStatus(null);
       setJobId(null);
       setJobDetails(null);
-      const { data } = await axios.post("http://localhost:5000/run", payload);
+      const { data } = await axios.post("https://app-s-online-compiler-api.vercel.app/run", payload);
       if (data.jobId) {
         setJobId(data.jobId);
         setStatus("Submitted.");
@@ -42,7 +42,7 @@ function App() {
         // poll here
         pollInterval = setInterval(async () => {
           const { data: statusRes } = await axios.get(
-            `http://localhost:5000/status`,
+            `https://app-s-online-compiler-api.vercel.app/status`,
             {
               params: {
                 id: data.jobId,
