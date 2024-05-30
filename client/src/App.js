@@ -11,6 +11,8 @@ function App() {
   const [jobId, setJobId] = useState(null);
   const [status, setStatus] = useState(null);
   const [jobDetails, setJobDetails] = useState(null);
+  axios.defaults.withCredentials=true;
+
   useEffect(() => {
     setCode(stubs[language]);
   }, [language]);
