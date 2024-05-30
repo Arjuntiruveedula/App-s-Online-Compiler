@@ -24,7 +24,7 @@ const app = express();
 
 app.use(cors(
   {
-  origin:[""],
+  origin:["https://app-s-online-compiler-api.vercel.app"],
   methods:["POST","GET"],
   credentials: true
 }));
