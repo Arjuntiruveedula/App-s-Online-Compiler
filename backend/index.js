@@ -4,7 +4,7 @@ const express = require("express");
 const cors = require("cors");
 const mongoose = require("mongoose");
 
-mongoose.connect(process.env.MONGO_URL,
+mongoose.connect("mongodb+srv://roapp4455:aWvEQFLj1gmGGLgY@compilerb.plbansi.mongodb.net/?retryWrites=true&w=majority&appName=Compilerb",
   {
     useNewUrlParser: true,
     useUnifiedTopology: true,
@@ -22,7 +22,12 @@ const Job = require("./models/Job");
 
 const app = express();
 
-app.use(cors());
+app.use(cors(
+  {
+  origin:[""],
+  methods:["POST","GET"],
+  credentials: true
+}));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
