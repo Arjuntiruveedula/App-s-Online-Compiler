@@ -47,7 +47,9 @@ app.post("/run", async (req, res) => {
   addJobToQueue(jobId);
   res.status(201).json({ jobId });
 });
-
+app.get("/", (req,res)=>{
+  res.json("Hello Arjun");
+})
 app.get("/status", async (req, res) => {
   const jobId = req.query.id;
 
