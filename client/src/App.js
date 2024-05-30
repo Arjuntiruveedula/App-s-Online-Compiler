@@ -11,7 +11,6 @@ function App() {
   const [jobId, setJobId] = useState(null);
   const [status, setStatus] = useState(null);
   const [jobDetails, setJobDetails] = useState(null);
-  axios.defaults.withCredentials=true;
   useEffect(() => {
     setCode(stubs[language]);
   }, [language]);
@@ -34,6 +33,7 @@ function App() {
       setStatus(null);
       setJobId(null);
       setJobDetails(null);
+      
       const { data } = await axios.post("https://app-s-online-compiler.vercel.app/run", payload);
       if (data.jobId) {
         setJobId(data.jobId);
