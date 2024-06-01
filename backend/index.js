@@ -20,9 +20,9 @@ const { generateFile } = require("./generateFile");
 const { addJobToQueue } = require("./jobQueue");
 const Job = require("./models/Job");
 
+app.use(cors());
 const app = express();
 
-app.use(cors());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
