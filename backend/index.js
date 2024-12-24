@@ -4,7 +4,7 @@ const express = require("express");
 const cors = require("cors");
 const mongoose = require("mongoose");
 
-mongoose.connect("mongodb+srv://roapp4455:aWvEQFLj1gmGGLgY@compilerb.plbansi.mongodb.net/?retryWrites=true&w=majority&appName=Compilerb",
+mongoose.connect(process.env.MONGODB_URI,
   {
     useNewUrlParser: true,
     useUnifiedTopology: true,
