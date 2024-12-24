@@ -20,7 +20,11 @@ const { generateFile } = require("./generateFile");
 const { addJobToQueue } = require("./jobQueue");
 const Job = require("./models/Job");
 
-app.use(cors());
+app.use(cors({
+  origin: 'https://appro-s-online-compiler.vercel.app'
+}));
+
+
 const app = express();
 
 app.use(express.urlencoded({ extended: true }));
